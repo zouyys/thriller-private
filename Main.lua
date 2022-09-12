@@ -5,8 +5,15 @@ if game.PlaceId == 2788229376 then
         wait()
     until game:IsLoaded()
 
+    
+    
+    Local Hitbox = getgenv().AimPart
+    Local Smoothing = getgenv().Smoothness
+    
+    
+    
     getgenv().OldAimPart = "UpperTorso"
-    getgenv().AimPart = "UpperTorso"
+    --getgenv().AimPart = "UpperTorso"
     getgenv().AimlockKey = "q"
     getgenv().AimRadius = 8 
     getgenv().ThirdPerson = true
@@ -15,7 +22,7 @@ if game.PlaceId == 2788229376 then
     getgenv().PredictMovement = true 
     getgenv().PredictionVelocity = 7.22
     getgenv().CheckIfJumped = true
-    getgenv().Smoothness = true
+    --getgenv().Smoothness = true
     getgenv().SmoothnessAmount = 0.0195
 
     local Players, Uis, RService, SGui =

@@ -6,17 +6,17 @@ if game.PlaceId == 2788229376 then
     until game:IsLoaded()
 
     getgenv().OldAimPart = "UpperTorso"
-    getgenv().AimPart = "UpperTorso"
-    getgenv().AimlockKey = "q"
-    getgenv().AimRadius = 8 
+    getgenv().AimPart = Hitbox
+    getgenv().AimlockKey = Key
+    getgenv().AimRadius = Fov
     getgenv().ThirdPerson = true
     getgenv().FirstPerson = true
     getgenv().TeamCheck = false 
     getgenv().PredictMovement = true 
-    getgenv().PredictionVelocity = 7.22
+    getgenv().PredictionVelocity = Prediction
     getgenv().CheckIfJumped = true
-    getgenv().Smoothness = true
-    getgenv().SmoothnessAmount = 0.0195
+    getgenv().Smoothness = Smoothing
+    getgenv().SmoothnessAmount = SmoothingAmount
 
     local Players, Uis, RService, SGui =
         game:GetService "Players",

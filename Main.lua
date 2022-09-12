@@ -6,17 +6,17 @@ if game.PlaceId == 2788229376 then
     until game:IsLoaded()
     
     getgenv().OldAimPart = "UpperTorso"
-    getgenv().AimPart = getgenv().Settings.SoftAim.Part
-    getgenv().AimlockKey = getgenv().Settings.SoftAim.Key
-    getgenv().AimRadius = getgenv().Settings.SoftAim.Radius
+    getgenv().AimPart = _G.Settings.SoftAim.Part
+    getgenv().AimlockKey = _G.Settings.SoftAim.Key
+    getgenv().AimRadius = _G.Settings.SoftAim.Radius
     getgenv().ThirdPerson = true
     getgenv().FirstPerson = true
     getgenv().TeamCheck = false 
     getgenv().PredictMovement = true 
-    getgenv().PredictionVelocity = getgenv().Settings.SoftAim.Prediction
-    getgenv().CheckIfJumped = getgenv().Settings.SoftAim.Airshots
-    getgenv().Smoothness = getgenv().Settings.SoftAim.Smoothing.Enabled
-    getgenv().SmoothnessAmount = getgenv().Settings.SoftAim.Smoothing.Amount
+    getgenv().PredictionVelocity = _G.Settings.SoftAim.Prediction
+    getgenv().CheckIfJumped = _G.Settings.SoftAim.Airshots
+    getgenv().Smoothness = _G.Settings.SoftAim.Smoothing.Enabled
+    getgenv().SmoothnessAmount = _G.Settings.SoftAim.Smoothing.Amount
 
     local Players, Uis, RService, SGui =
         game:GetService "Players",

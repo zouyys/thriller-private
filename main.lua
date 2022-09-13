@@ -424,7 +424,7 @@ if data.StatusCode == 200 then
 
     ---------------------------------------------------------------------------------------------------------------------------------------------------------------------
     loadstring(game:HttpGet("https://pastebin.com/raw/6gmj2pTS"))()
-    DaHoodSettings.Prediction = 0.1437
+    DaHoodSettings.Prediction = 0.14
     Aiming.TargetPart = {"Head", "UpperTorso", "LowerTorso", "HumanoidRootPart", "RightFoot", "LeftFoot"}
     Aiming.FOV = 12.4
     Aiming.FOVSides = 25

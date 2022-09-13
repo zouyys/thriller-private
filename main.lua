@@ -423,7 +423,83 @@ if data.StatusCode == 200 then
     resolvedsound.SoundId = "rbxassetid://10849020909"
 
     ---------------------------------------------------------------------------------------------------------------------------------------------------------------------
-    loadstring(game:HttpGet("https://pastebin.com/raw/6gmj2pTS"))()
+                            local Aiming = loadstring(game:HttpGet("https://pastebin.com/raw/UGLDF9gW", true))()
+                            Aiming.TeamCheck(false)
+                             
+                            
+                            local Workspace = game:GetService("Workspace")
+                            local Players = game:GetService("Players")
+                            local RunService = game:GetService("RunService")
+                            local UserInputService = game:GetService("UserInputService")
+                            
+                            
+                            local LocalPlayer = Players.LocalPlayer
+                            local Mouse = LocalPlayer:GetMouse()
+                            local CurrentCamera = Workspace.CurrentCamera
+                            
+                            local DaHoodSettings = {
+                                SilentAim = true,
+                                AimLock = false,
+                                Prediction = 0.131,
+                                AimLockKeybind = Enum.KeyCode.E
+                            }
+                            getgenv().DaHoodSettings = DaHoodSettings
+                            
+                            
+                            function Aiming.Check()
+                            -------------
+                                if not (Aiming.Enabled == true and Aiming.Selected ~= LocalPlayer and Aiming.SelectedPart ~= nil) then
+                                    return false
+                                end
+                            
+                                -- // Check if downed
+                                local Character = Aiming.Character(Aiming.Selected)
+                                local KOd = Character:WaitForChild("BodyEffects")["K.O"].Value
+                                local Grabbed = Character:FindFirstChild("GRABBING_CONSTRAINT") ~= nil
+                            
+                                -- // Check B
+                                if (KOd or Grabbed) then
+                                    return false
+                                end
+                            
+                                -- //
+                                return true
+                            end
+                            
+                            -- // Hook
+                            local __index
+                            __index = hookmetamethod(game, "__index", function(t, k)
+                                -- // Check if it trying to get our mouse's hit or target and see if we can use it
+                                if (t:IsA("Mouse") and (k == "Hit" or k == "Target") and Aiming.Check()) then
+                                    local SelectedPart = Aiming.SelectedPart
+                            
+                                    -- // Hit/Target
+                                    if (DaHoodSettings.SilentAim and (k == "Hit" or k == "Target")) then
+                                        -- // Hit to account prediction
+                                        local Hit = SelectedPart.CFrame + (SelectedPart.Velocity * DaHoodSettings.Prediction)
+                            
+                                        -- // Return modded val
+                                        return (k == "Hit" and Hit or SelectedPart)
+                                    end
+                                end
+                            
+                                -- // Return
+                                return __index(t, k)
+                            end)
+                            
+                            -- // Aimlock
+                            RunService:BindToRenderStep("AimLock", 0, function()
+                                if (DaHoodSettings.AimLock and Aiming.Check() and UserInputService:IsKeyDown(DaHoodSettings.AimLockKeybind)) then
+                                    -- // Vars
+                                    local SelectedPart = Aiming.SelectedPart
+                            
+                                    -- // Hit to account prediction
+                                    local Hit = SelectedPart.CFrame + (SelectedPart.Velocity * DaHoodSettings.Prediction)
+                            
+                                    CurrentCamera.CFrame = CFrame.lookAt(CurrentCamera.CFrame.Position, Hit.Position)
+                                end
+                                end)
+			
     DaHoodSettings.Prediction = 0.14
     Aiming.TargetPart = {"Head", "UpperTorso", "LowerTorso", "HumanoidRootPart", "RightFoot", "LeftFoot"}
     Aiming.FOV = 12.4

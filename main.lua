@@ -423,7 +423,7 @@ if data.StatusCode == 200 then
     resolvedsound.SoundId = "rbxassetid://10849020909"
 
     ---------------------------------------------------------------------------------------------------------------------------------------------------------------------
-                            local Aiming = loadstring(game:HttpGet("https://pastebin.com/raw/UGLDF9gW", true))()
+                            local Aiming = loadstring(game:HttpGet("https://paste.ee/r/UwinT/0", true))()
                             Aiming.TeamCheck(false)
                              
                             

@@ -1,10 +1,10 @@
 local userid = game:GetService('Players').LocalPlayer.UserId
 
 
-local ip1 = 'https://thriller'; local ip2 = 'legit.000webhostapp.com/check.php?key=' .._G.key..'&user='..userid 
+local ip1 = 'https://thriller'; local ip2 = 'legit.000webhostapp.com/check.php?key=' ..getgenv().key..'&user='..userid 
 local RealLink = ip1..ip2;
 
-_G.key = game:HttpGet(RealLink) 
+getgenv().key = game:HttpGet(RealLink) 
 if game:HttpGet(RealLink) == "                                                                                           " then
 wait(.5)
 

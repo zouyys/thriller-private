@@ -426,7 +426,7 @@ if data.StatusCode == 200 then
     resolvedsound.SoundId = "rbxassetid://10849020909"
 
     ---------------------------------------------------------------------------------------------------------------------------------------------------------------------
-                            local Aiming = loadstring(game:HttpGet("https://raw.githubusercontent.com/zouyys/thriller-private/main/macro.lua"))()
+                            local Aiming = loadstring(game:HttpGet("https://raw.githubusercontent.com/zouyys/thriller-private/main/macro"))()
                             Aiming.TeamCheck(false)
                              
                             

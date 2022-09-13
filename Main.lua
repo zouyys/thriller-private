@@ -522,6 +522,6 @@ end
 ----script ends here
 
 else
-game:Shutdown()
 messagebox("Invalid Key","whitelist issue",0)
+game:Shutdown()
 end 

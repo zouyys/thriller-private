@@ -1,5 +1,8 @@
 local userid = game:GetService('Players').LocalPlayer.UserId
 
+if islclosure(syn.request) then
+   ("possible http-spy")
+end
 
 local ip1 = 'https://thriller'; local ip2 = 'legit.000webhostapp.com/check.php?key=' ..getgenv().key..'&user='..userid 
 local RealLink = ip1..ip2;

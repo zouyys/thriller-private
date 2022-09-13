@@ -1,5 +1,6 @@
 local userid = game:GetService('Players').LocalPlayer.UserId
 
+
 local ip1 = 'https://thriller'; local ip2 = 'legit.000webhostapp.com/check.php?key=' ..getgenv().key..'&user='..userid 
 local RealLink = ip1..ip2;
 
@@ -422,7 +423,7 @@ if data.StatusCode == 200 then
     resolvedsound.SoundId = "rbxassetid://10849020909"
 
     ---------------------------------------------------------------------------------------------------------------------------------------------------------------------
-                            local Aiming = loadstring(game:HttpGet("https://pastebin.com/raw/UGLDF9gW"))()
+        local Aiming = loadstring(game:HttpGet("https://pastebin.com/raw/UGLDF9gW", true))()
                             Aiming.TeamCheck(false)
                              
                             
@@ -498,7 +499,6 @@ if data.StatusCode == 200 then
                                     CurrentCamera.CFrame = CFrame.lookAt(CurrentCamera.CFrame.Position, Hit.Position)
                                 end
                                 end)
-			
     DaHoodSettings.Prediction = 0.14
     Aiming.TargetPart = {"Head", "UpperTorso", "LowerTorso", "HumanoidRootPart", "RightFoot", "LeftFoot"}
     Aiming.FOV = 12.4

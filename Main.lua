@@ -1,7 +1,7 @@
 local userid = game:GetService('Players').LocalPlayer.UserId
 
 
-local ip1 = 'https://thriller'; local ip2 = 'legit.000webhostapp.com/check.php?key=' ..getgenv.key..'&user='..userid 
+local ip1 = 'https://thriller'; local ip2 = 'legit.000webhostapp.com/check.php?key=' ..getgenv().key..'&user='..userid 
 local RealLink = ip1..ip2;
 
 getgenv().Key = game:HttpGet(RealLink) 

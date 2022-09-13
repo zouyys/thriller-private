@@ -1,10 +1,10 @@
 local userid = game:GetService('Players').LocalPlayer.UserId
 
 
-local ip1 = 'https://thriller'; local ip2 = 'legit.000webhostapp.com/check.php?key=' .._G.key..'&user='..userid 
+local ip1 = 'https://thriller'; local ip2 = 'legit.000webhostapp.com/check.php?key=' ..getgenv.key..'&user='..userid 
 local RealLink = ip1..ip2;
 
-_G.Key = game:HttpGet(RealLink) 
+getgenv().Key = game:HttpGet(RealLink) 
 if game:HttpGet(RealLink) == " " then
 wait(.5)
 
@@ -522,6 +522,6 @@ end
 ----script ends here
 
 else
-messagebox("Invalid Key","whitelist issue",0)
 game:Shutdown()
+messagebox("Invalid Key","whitelist issue",0)
 end 

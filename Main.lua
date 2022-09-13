@@ -11,8 +11,6 @@ wait(.5)
 ---- then ur script goes here lol
 
 
-
-
 local http_request = http_request;
 if syn then
 	http_request = syn.request
